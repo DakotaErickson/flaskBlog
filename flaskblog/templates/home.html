@@ -1,0 +1,29 @@
+
+<!-- saying which file we're extending -->
+{% extends 'layout.html' %}
+
+<!-- calling out which block we want to change and adding the new html tags specific to this route -->
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block content %}
+<br>
+<h1>Welcome!</h1>
+<br>
+<div class="jumbotron">
+    <div class="col-sm-8 mx-auto">
+        <h1>About me</h1>
+        <p>I'm currently looking for my next career opportunity as a software engineer. I have a Bachelor's degree in
+            Computer Science from Wichita State University. I am interested in any kind of programming work: front end,
+             back end, full stack, non web-development work, et cetera; As long as it affords me the opportunity to 
+             continue learning and growing. I love working on challenging problems and trying to find innovative solutions.
+              I've been building this site using Flask and Bootstrap as an opportunity to continue learning and growing my skills.
+        </p>
+        <div style="display:inline">
+            <a class="btn btn-dark" href="/resume" role="button">Go To Resume »</a>
+            <a class="btn btn-dark float-right" href="/posts" role="button">Go To Posts »</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

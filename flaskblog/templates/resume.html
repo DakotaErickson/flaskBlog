@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Resume</title>
+{% endblock %}
+
+{% block content %}
+<br>
+<h1 class="text-center">Dakota Erickson</h1>
+<p class="text-center">derickson29@gmail.com | linkedin.com/in/dakota-erickson</p>
+<h4 class="text-center">Software Engineer</h4>
+<p class="text-center">Proven ability to apply software engineering principles and experience in new and familiar
+    domains</p>
+<h4 class="text-center">Core Competencies</h4>
+<p class="text-center">Problem solving, Data Structures & Algorithms, Version Control, Strong Communication Skills</p>
+<br>
+<h5>Technologies:</h5>
+<p>
+    Python, Angular, Typescript, Javascript, C++, Git, Linux, HTML/CSS, Docker
+</p>
+<h5>Work History:</h5>
+<p>
+<div style="display:inline">
+    <h7><strong>Hyperconverged Software Engineer</strong></h7>
+    <h7 class="float-right"><strong>NetApp June 2019 - October 2020</strong></h7>
+</div>
+<p>
+    <li>Refactored an inherited Python code base with hard coded values and paths to be more dynamic/modular, making the
+        code base easier to work in for developers.</li>
+    <br>
+    <li>Created a micro service in Go that returned only the necessary information to replace an API call that was slow
+        to return and had excessive information.</li>
+    <br>
+    <li>Implemented a UI component in Angular supporting a new underlying hardware configuration, allowing that
+        configuration to be offered to customers.</li>
+    <br>
+</p>
+<hr>
+<br>
+<div style="display:inline">
+    <h7><strong>Software Engineering Contractor</strong></h7>
+    <h7 class="float-right"><strong>Ennovar for NetApp July 2018 - May 2019</strong></h7>
+</div>
+<p>
+    <li>Created a tool in Python that would collect/parse logs looking for specific hardware failure signatures using
+        regex when the support team was having difficulty diagnosing hardware failures efficiently. This reduced
+        turnaround time for customers.</li>
+    <br>
+    <li>Devised and conducted a rollback test matrix to investigate which build versions were having issues, enabling
+        the platform team to be confident in performing rollbacks.</li>
+    <br>
+    <li>Executed a kernel fuzzing software suite to test the OS and analyzed/reported any crashes.</li>
+    <br>
+</p>
+<hr>
+<div style="display:inline">
+    <h7><strong>Level 1 Technical Support</strong></h7>
+    <h7 class="float-right"><strong>Ennovar for Textron June 2017 - July 2018</strong></h7>
+</div>
+<p>
+    <li>Resolved hardware and software issues that were impeding employees’ work</li>
+    <br>
+    <li>Educated employees about how to avoid issues going forward so they could work efficiently</li>
+    <br>
+    <li>Trained six new team members about best practices and common issues, increasing the number of employees we could
+        help per hour by 20%
+    </li>
+    <br>
+</p>
+<h5>Education:</h5>
+<p>Bachelor of Science in Computer Science, Wichita State University</p>
+</p>
+
+{% endblock content %}
