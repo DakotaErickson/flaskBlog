@@ -16,7 +16,8 @@ def home():
 
 @app.route('/posts')
 def posts():
-    posts = Post.query.all()
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.datePosted.desc()).paginate(page=page, per_page=5)
     return render_template('posts.html', posts=posts)
 
 @app.route('/post/<int:postId>')
