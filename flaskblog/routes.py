@@ -12,13 +12,13 @@ from flask_login import login_user, logout_user, current_user, login_required
 @app.route('/home')
 def home():
     posts = Post.query.all()
-    return render_template('home.html', posts=posts)
+    return render_template('home.html', posts=posts, title='Home')
 
 @app.route('/posts')
 def posts():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.datePosted.desc()).paginate(page=page, per_page=5)
-    return render_template('posts.html', posts=posts)
+    return render_template('posts.html', posts=posts, title='Posts')
 
 @app.route('/post/<int:postId>')
 def post(postId):
@@ -108,7 +108,7 @@ def login():
 
 @app.route('/resume')
 def resume():
-    return render_template('resume.html')
+    return render_template('resume.html', title="Resume")
 
 
 @app.route('/logout')

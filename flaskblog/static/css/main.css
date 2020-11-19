@@ -1,5 +1,26 @@
+.body {
+  background-color: #19181a;
+
+}
+
+.city-box {
+  background-color:#94b9af !important;
+}
+
+.city-name {
+  color: black !important;
+}
+
+.jumbotron-background {
+  background-color: #E7EFC5;
+}
+
+.resume-rule {
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
 .content-section {
-  background: #ffffff;
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -9,7 +30,7 @@
 .article-img {
   height: 65px;
   width: 65px;
-  margin-right: 16px;
+  margin-right: 30px;
 }
 
 .article-metadata {

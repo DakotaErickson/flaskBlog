@@ -1,27 +1,56 @@
-
 <!-- saying which file we're extending -->
 {% extends 'layout.html' %}
 
-<!-- calling out which block we want to change and adding the new html tags specific to this route -->
-{% block head %}
-<title>Home</title>
-{% endblock %}
-
 {% block content %}
 <br>
-<h1 class="display-3 mb-5">Welcome!</h1>
+<h1 class="display-3 mb-5 text-white">Welcome!</h1>
 <br>
 <br>
-<div class="jumbotron mt-5">
-    <div class="col-sm-8 mx-auto">
-        <h1 class="text-center">About me</h1>
-        <p class="lead">I'm currently looking for my next career opportunity as a software engineer. I have a Bachelor's degree in
-            Computer Science from Wichita State University. I am interested in any kind of programming work: front end,
-             back end, full stack, non web-development work, et cetera; As long as it affords me the opportunity to 
-             continue learning and growing. I love working on challenging problems and trying to find innovative solutions.
-              I've been building this site using Flask and Bootstrap as an opportunity to continue learning and growing my skills.
-        </p>
-    </div>
+<div class="row">
+    <div class="col-md-8 blog-main">
+        <div class="blog-post">
+            <div class="jumbotron jumbotron-background text-black pt-5">
+                <div class="media-body">
+                    <h1 class="text-center">About Me</h1>
+                    <p class="lead">I'm currently looking for my next career opportunity as a software engineer. I have
+                        a Bachelor's degree in
+                        Computer Science from Wichita State University. I am interested in any kind of programming work:
+                        front end,
+                        back end, full stack, non web-development work, et cetera; As long as it affords me the
+                        opportunity to
+                        continue learning and growing. I love working on challenging problems and trying to find
+                        innovative solutions.
+                        I currently live in Wichita, Kansas, but I am open to relocating to the right
+                        palce for the right job. I am also open to working 100% remote as I have done for the past year.
+                        Currently
+                        the locations I am interested in are the Seattle, Portland, and Denver metro areas. Please feel
+                        free to view my resume
+                        and contact me if you feel like you've got a position I would be a good fit for.
+                    </p>
+                    <p class=""> -Dakota Erickson</p>
+                </div>
+            </div>
+        </div><!-- /.blog-post -->
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+        <div class="p-4 mb-2 bg-light rounded city-box text-white lead">
+            <h4 class="city-name">Seattle</h4>
+            <p class="mb-0">A blurb about why I'm consdidering Seattle.</p>
+            <div> A tie into a weather API to display the current temp in the destination city</div>
+        </div>
+        <div class="p-4 mb-2 rounded city-box text-white lead">
+            <h4 class="city-name">Portland</h4>
+            <p class="mb-0">A blurb about why I'm consdidering Portland.</p>
+            <div> A tie into a weather API to display the current temp in the destination city</div>
+        </div>
+        <div class="p-4 mb-2 rounded city-box text-white lead">
+            <h4 class="city-name">Denver</h4>
+            <p class="mb-0">A blurb about why I'm consdidering Denver.</p>
+            <div> A tie into a weather API to display the current temp in the destination city</div>
+        </div>
+    </aside><!-- /.blog-sidebar -->
+
 </div>
 
 {% endblock content %}
