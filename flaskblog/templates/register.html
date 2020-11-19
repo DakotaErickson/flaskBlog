@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <div class='content-section'>
+    <div class='content-section text-white'>
         <form method='POST' action="">
             {{ form.hidden_tag()}}
             <fieldset class="form-group">
@@ -61,7 +61,7 @@
                 </div>
             </fieldset>
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-outline-light") }}
             </div>
         </form>
     </div>
