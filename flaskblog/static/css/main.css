@@ -1,5 +1,10 @@
 .body {
   background-color: #19181a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-me-blurb {
+  font-size: 1.1rem;
 }
 
 .form-background {
@@ -24,7 +29,7 @@
 }
 
 .resume-rule {
-  border: 2px solid white;
+  border: 2px solid #94b9af;
   border-radius: 5px;
 }
 
@@ -48,7 +53,8 @@
 }
 
 .article-metadata a:hover {
-  color: white;
+  color: #94b9af;
+  text-decoration: none;
 }
 
 .article-title {
@@ -56,6 +62,6 @@
 }
 
 .article-title a:hover {
-  color: white;
-  text-decoration: none;
+  color: #94b9af !important;
+  text-decoration: none !important;
 }
