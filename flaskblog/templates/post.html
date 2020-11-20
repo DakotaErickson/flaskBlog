@@ -2,12 +2,12 @@
 
 {% block content %}
 <div>
-    <article class="media content-section text-white">
+    <article class="media content-section text-white jumbotron-background">
         <img class="rounded-circle article-image"
             src="{{ url_for('static', filename='profilePics/' + post.author.imageFile) }}">
         <div class="media-body mr-3 ml-3">
             <div class="article-metadata mb-3">
-                <a class="mr-2" href="#">{{ post.author.username }}</a>
+                <a class="mr-2 article-title" href="#">{{ post.author.username }}</a>
                 <small>{{ post.datePosted.strftime('%Y-%m-%d') }}</small>
                 {% if post.author == current_user %}
                 <div class="mt-2 mb-3">
