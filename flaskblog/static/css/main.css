@@ -1,10 +1,14 @@
 .body {
   background-color: #19181a;
+}
 
+.form-background {
+  background-color: #343a40;
 }
 
 .city-box {
-  background-color:#94b9af !important;
+  background-color: #94b9af !important;
+
 }
 
 .city-name {
@@ -12,7 +16,11 @@
 }
 
 .jumbotron-background {
-  background-color: #E7EFC5;
+  background-color: #343a40;
+}
+
+.about-me {
+  color: white;
 }
 
 .resume-rule {
@@ -22,7 +30,7 @@
 
 .content-section {
   padding: 10px 20px;
-  border: 1px solid #dddddd;
+  border: 1px solid white;
   border-radius: 3px;
   margin-bottom: 20px;
 }
@@ -40,6 +48,14 @@
 }
 
 .article-metadata a:hover {
-  color: #333;
+  color: white;
+}
+
+.article-title {
+  color: white;
+}
+
+.article-title a:hover {
+  color: white;
   text-decoration: none;
 }
