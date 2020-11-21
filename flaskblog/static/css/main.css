@@ -13,6 +13,8 @@
 
 .city-box {
   background-color: #94b9af !important;
+  border: 1px solid #343a40;
+  border-radius: 3px;
 
 }
 
@@ -64,4 +66,8 @@
 .article-title a:hover {
   color: #94b9af !important;
   text-decoration: none !important;
+}
+
+.green-text {
+  color: #94b9af;
 }
