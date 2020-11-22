@@ -1,5 +1,8 @@
 import secrets
-import os
+import os 
+import json
+from math import ceil
+import requests
 from PIL import Image
 from flask import render_template, flash, redirect, url_for, request, abort
 from flaskblog import app, db, bcrypt
@@ -12,13 +15,30 @@ from flask_login import login_user, logout_user, current_user, login_required
 @app.route('/home')
 def home():
     posts = Post.query.all()
-    return render_template('home.html', posts=posts, title='Home')
+    response = requests.get(
+        'http://api.openweathermap.org/data/2.5/group?id=5809844,5746545,5419384&appid=dec3905e6011fd6078f2f0444f6e25c9')
+    responseJson = response.json()
+    cityList = responseJson['list']
+    seattleKelvin = cityList[0]['main']['temp']
+    seattleFahrenheit = kelvinToFahrenheit(seattleKelvin)
+    portlandKelvin = cityList[1]['main']['temp']
+    portlandFahrenheit = kelvinToFahrenheit(portlandKelvin)
+    denverKelvin = cityList[0]['main']['temp']
+    denverFahrenheit = kelvinToFahrenheit(denverKelvin)
+    return render_template('home.html', posts=posts, title='Home', seattleTemp=seattleFahrenheit, portlandTemp=portlandFahrenheit, denverTemp=denverFahrenheit)
+
+
+def kelvinToFahrenheit(temp):
+    return ceil((temp - 273.15) * 1.8 + 32)
+
 
 @app.route('/posts')
 def posts():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.datePosted.desc()).paginate(page=page, per_page=5)
+    posts = Post.query.order_by(
+        Post.datePosted.desc()).paginate(page=page, per_page=5)
     return render_template('posts.html', posts=posts, title='Posts')
+
 
 @app.route('/post/<int:postId>')
 def post(postId):
@@ -31,7 +51,8 @@ def post(postId):
 def newPost():
     form = PostForm()
     if form.validate_on_submit():
-        newPost = Post(title=form.title.data, content=form.content.data, author=current_user)
+        newPost = Post(title=form.title.data,
+                       content=form.content.data, author=current_user)
         db.session.add(newPost)
         db.session.commit()
         flash('Post created', 'success')
@@ -57,6 +78,7 @@ def edit(postId):
         form.content.data = post.content
     return render_template('editPost.html', title="Edit Post", form=form, legend='Edit Post')
 
+
 @app.route('/deletePost/<int:postId>', methods=['POST'])
 @login_required
 def deletePost(postId):
@@ -67,6 +89,7 @@ def deletePost(postId):
     db.session.commit()
     flash('Post has been deleted', 'success')
     return redirect(url_for('posts'))
+
 
 @app.route('/about')
 def about():
@@ -121,7 +144,8 @@ def savePicture(formPicture):
     randomHex = secrets.token_hex(8)
     _, fileExtension = os.path.splitext(formPicture.filename)
     pictureFileName = randomHex + fileExtension
-    picturePath = os.path.join(app.root_path, 'static/profilePics', pictureFileName)
+    picturePath = os.path.join(
+        app.root_path, 'static/profilePics', pictureFileName)
 
     # image resizing
     outputSize = (125, 125)
@@ -129,8 +153,8 @@ def savePicture(formPicture):
     i.thumbnail(outputSize)
     i.save(picturePath)
 
-
-    prev_picture = os.path.join(app.root_path, 'static/profilePics', current_user.imageFile)
+    prev_picture = os.path.join(
+        app.root_path, 'static/profilePics', current_user.imageFile)
     if os.path.exists(prev_picture) and os.path.basename(prev_picture) != 'default.jpg':
         os.remove(prev_picture)
 
@@ -156,4 +180,3 @@ def account():
     imageFile = url_for(
         'static', filename='profilePics/' + current_user.imageFile)
     return render_template('account.html', title='Account', imageFile=imageFile, form=form)
-

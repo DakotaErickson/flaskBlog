@@ -34,19 +34,22 @@
 
     <aside class="col-md-4 blog-sidebar">
         <div class="p-4 mb-2 bg-light rounded city-box text-white">
-            <h4 class="city-name">Seattle</h4>
-            <p class="mb-0">A blurb about why I'm consdidering Seattle.</p>
-            <div> A tie into a weather API to display the current temp in the destination city</div>
+            <div>
+                <h4 class="city-name">Seattle <div class="float-right">{{ seattleTemp }}°F</div></h4>
+            </div>
+            <p class="mb-0"> I've always been interested in living around Seattle. I think I would enjoy the environment and the flourishing tech industry is an added bonus.</p>
         </div>
         <div class="p-4 mb-2 rounded city-box text-white">
-            <h4 class="city-name">Portland</h4>
+            <div>
+                <h4 class="city-name">Portland <div class="float-right">{{ portlandTemp }}°F</div></h4>
+            </div>
             <p class="mb-0">A blurb about why I'm consdidering Portland.</p>
-            <div> A tie into a weather API to display the current temp in the destination city</div>
         </div>
         <div class="p-4 mb-2 rounded city-box text-white">
-            <h4 class="city-name">Denver</h4>
+            <div>
+                <h4 class="city-name">Denver <div class="float-right">{{ denverTemp }}°F</div></h4>
+            </div>
             <p class="mb-0">A blurb about why I'm consdidering Denver.</p>
-            <div> A tie into a weather API to display the current temp in the destination city</div>
         </div>
     </aside><!-- /.blog-sidebar -->
 
