@@ -14,9 +14,10 @@ from flask_login import login_user, logout_user, current_user, login_required
 @app.route('/')
 @app.route('/home')
 def home():
+    apiKey = ""
     posts = Post.query.all()
     response = requests.get(
-        'http://api.openweathermap.org/data/2.5/group?id=5809844,5746545,5419384&appid=dec3905e6011fd6078f2f0444f6e25c9')
+        f'http://api.openweathermap.org/data/2.5/group?id=5809844,5746545,5419384&appid={apiKey}')
     responseJson = response.json()
     cityList = responseJson['list']
     seattleKelvin = cityList[0]['main']['temp']
