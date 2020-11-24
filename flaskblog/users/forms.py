@@ -1,17 +1,18 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from flaskblog.models import User
 from flask_login import current_user
+from flaskblog.models import User
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', 
-                            validators=[DataRequired(), Length(min=3, max=20)])
+    username = StringField('Username',
+                           validators=[DataRequired(), Length(min=3, max=20)])
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    passwordConfirmation = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    passwordConfirmation = PasswordField('Confirm Password', validators=[
+                                         DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
 
     def validate_username(self, username):
@@ -26,6 +27,7 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('Email already registered')
 
+
 class LoginForm(FlaskForm):
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
@@ -33,12 +35,14 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
+
 class UpdateAccountForm(FlaskForm):
-    username = StringField('Username', 
-                            validators=[DataRequired(), Length(min=3, max=20)])
+    username = StringField('Username',
+                           validators=[DataRequired(), Length(min=3, max=20)])
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
-    profilePic = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
+    profilePic = FileField('Update Profile Picture', validators=[
+                           FileAllowed(['jpg', 'png', 'jpeg'])])
     submit = SubmitField('Update')
 
     def validate_username(self, username):
@@ -55,7 +59,22 @@ class UpdateAccountForm(FlaskForm):
             if user:
                 raise ValidationError('Email already registered')
 
-class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Post')
+
+class RequestResetForm(FlaskForm):
+    email = StringField('Email',
+                        validators=[DataRequired(), Email()])
+    submit = SubmitField('Request Password Reset')
+
+    def validate_email(self, email):
+        # ensure that emails are unique
+        user = User.query.filter_by(email=email.data).first()
+        if user is None:
+            raise ValidationError(
+                'No account registered with provided email address. Please register a new account.')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
+    passwordConfirmation = PasswordField('Confirm Password', validators=[
+                                         DataRequired(), EqualTo('password')])
+    submit = SubmitField('Reset Password')

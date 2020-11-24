@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<h1 class="text-white mb-3"> Posts by {{ user.username }} ({{ posts.total }})</h1>
 <div class="text-white lead">
     {% for post in posts.items %}
     <article class="media content-section jumbotron-background">
@@ -18,9 +19,9 @@
 {% for pageNum in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
     {% if pageNum %}
       {% if posts.page == pageNum %}
-        <a class="btn btn-light mb-4" href="{{ url_for('posts.allPosts', page=pageNum) }}">{{ pageNum }}</a>
+        <a class="btn btn-light mb-4" href="{{ url_for('users.userPosts', username=user.username, page=pageNum) }}">{{ pageNum }}</a>
       {% else %}
-        <a class="btn btn-outline-light mb-4" href="{{ url_for('posts.allPosts', page=pageNum) }}">{{ pageNum }}</a>
+        <a class="btn btn-outline-light mb-4" href="{{ url_for('users.userPosts', username=user.username, page=pageNum) }}">{{ pageNum }}</a>
       {% endif %}
     {% else %}  
       ...

@@ -2,15 +2,32 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+from flask_mail import Mail
+from flaskblog.config import Config
 
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'eb07bd4f0fa9b7adcd787595e754edbf'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-loginManager = LoginManager(app)
-loginManager.login_view = 'login'
+db = SQLAlchemy()
+bcrypt = Bcrypt()
+loginManager = LoginManager()
+loginManager.login_view = 'users.login'
 loginManager.login_message_category = 'dark'
+mail = Mail()
 
-from flaskblog import routes
+
+def create_app(configClass=Config):
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    db.init_app(app)
+    bcrypt.init_app(app)
+    loginManager.init_app(app)
+    mail.init_app(app)
+
+    from flaskblog.users.routes import users
+    from flaskblog.posts.routes import posts
+    from flaskblog.main.routes import main
+    app.register_blueprint(users)
+    app.register_blueprint(posts)
+    app.register_blueprint(main)
+
+    return app
