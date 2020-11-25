@@ -1,27 +1,27 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
-from flask_login import LoginManager
-from flask_mail import Mail
+#from flask_sqlalchemy import SQLAlchemy
+#from flask_bcrypt import Bcrypt
+#from flask_login import LoginManager
+#from flask_mail import Mail
 from flaskblog.config import Config
 
 
-db = SQLAlchemy()
-bcrypt = Bcrypt()
-loginManager = LoginManager()
-loginManager.login_view = 'users.login'
-loginManager.login_message_category = 'dark'
-mail = Mail()
+# db = SQLAlchemy()
+# bcrypt = Bcrypt()
+# loginManager = LoginManager()
+# loginManager.login_view = 'users.login'
+# loginManager.login_message_category = 'dark'
+# mail = Mail()
 
 
 def create_app(configClass=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    db.init_app(app)
-    bcrypt.init_app(app)
-    loginManager.init_app(app)
-    mail.init_app(app)
+    #db.init_app(app)
+    #bcrypt.init_app(app)
+    #loginManager.init_app(app)
+    #mail.init_app(app)
 
     #from flaskblog.users.routes import users
     #from flaskblog.posts.routes import posts
