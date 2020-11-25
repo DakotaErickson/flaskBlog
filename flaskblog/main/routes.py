@@ -1,7 +1,4 @@
-import os, requests, json
-from math import ceil
 from flask import Blueprint, render_template, request
-from flaskblog.models import Post
 
 main = Blueprint('main', __name__)
 
