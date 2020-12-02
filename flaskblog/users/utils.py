@@ -29,7 +29,7 @@ def savePicture(formPicture):
 def sendResetEmail(user):
     token = user.getResetToken()
     msg = Message('Password Reset Request',
-                    sender=os.environ.get('EMAIL'),
+                    sender='derickson29@gmail.com',
                     recipients=[user.email])
     msg.body = f'''To reset your password visit the following link:
 {url_for('users.resetToken', token=token, _external=True)} 
