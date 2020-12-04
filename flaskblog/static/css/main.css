@@ -37,9 +37,9 @@
 
 .content-section {
   padding: 10px 20px;
-  border: 1px solid #94b9af;
-  border-radius: 3px;
-  margin-bottom: 20px;
+  border: 1px solid #94b9af !important;
+  border-radius: 3px !important;
+  margin-bottom: 20px !important;
 }
 
 .article-img {
@@ -70,4 +70,9 @@
 
 .green-text {
   color: #94b9af;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
 }

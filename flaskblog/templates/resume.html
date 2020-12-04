@@ -4,70 +4,106 @@
 <div class="text-white">
     <h1 class="text-center">Dakota Erickson</h1>
     <p class="text-center">derickson29@gmail.com | linkedin.com/in/dakota-erickson</p>
-    <h4 class="text-center mb-0">SOFTWARE ENGINEER</h4>
+    <h3 class="text-center mb-0">Software Engineer</h3>
     <p class="text-center lead">Proven ability to apply software engineering principles and experience in new and
         familiar
         domains</p>
     <br>
-    <h4 class="text-center mb-0">CORE COMPETENCIES</h4>
+    <h3 class="text-center mb-0">Core Competencies</h3>
     <p class="text-center lead">Problem Solving, Data Structures & Algorithms, Version Control, Strong Communication
         Skills</p>
     <hr class="resume-rule">
-    <h5>TECHNOLOGIES:</h5>
-    <div class=" content-section jumbotron-background pb-0 mb-0">
-        <p>
+    <h5>Technologies:</h5>
+    <div class=" content-section jumbotron-background">
+        <p class="mb-0">
             Python, Angular, Typescript, Javascript, C++, Git, Linux, HTML/CSS, Docker
         </p>
     </div>
     <hr class="resume-rule">
-    <h5>WORK HISTORY:</h5>
-    <div class=" content-section jumbotron-background pb-0 mb-0">
-        <p>
-            <h7><strong>SOFTWARE ENGINEER</strong></h7>
-            <h7 class="float-right"><strong>NETAPP JUNE 2019 - OCTOBER 2020</strong></h7>
-        <p>
-            <li>Refactored an inherited Python code base with hard coded values and paths to be more dynamic/modular,
-                making the
-                code base easier to work in for developers.</li>
-            <li>Created a micro service in Go that returned only the necessary information to replace an API call that
-                was slow
-                to return and had excessive information.</li>
-            <li>Implemented a UI component in Angular supporting a new underlying hardware configuration, allowing that
-                configuration to be offered to customers.</li>
-        </p>
-    </div>
-    <br>
-    <div class=" content-section jumbotron-background pb-0 mb-0">
-        <h7><strong>SOFTWARE ENGINEER CONTRACTOR</strong></h7>
-        <h7 class="float-right"><strong>ENNOVAR FOR NETAPP JULY 2018 - MAY 2019</strong></h7>
-        <p>
-            <li>Created a tool in Python that would collect/parse logs looking for specific hardware failure signatures
-                using
-                regex when the support team was having difficulty diagnosing hardware failures efficiently. This reduced
-                turnaround time for customers.</li>
-            <li>Devised and conducted a rollback test matrix to investigate which build versions were having issues,
-                enabling
-                the platform team to be confident in performing rollbacks.</li>
-            <li>Executed a kernel fuzzing software suite to test the OS and analyzed/reported any crashes.</li>
-        </p>
-    </div>
-    <br>
-    <div class=" content-section jumbotron-background pb-0 mb-0">
-        <h7><strong>TECHNICAL SUPPORT</strong></h7>
-        <h7 class="float-right"><strong>ENNOVAR FOR TEXTRON JUNE 2017 - JULY 2018</strong></h7>
-        <p>
-            <li>Resolved hardware and software issues that were impeding employees’ work</li>
-            <li>Educated employees about how to avoid issues going forward so they could work efficiently</li>
-            <li>Trained six new team members about best practices and common issues, increasing the number of employees
-                we could
-                help per hour by 20%
-            </li>
-        </p>
-    </div>
+    <h5>Work History:</h5>
+    <div class="accordion" id="accordionExample">
+        <div class="card body">
+          <div class="card-header content-section jumbotron-background" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-block text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="float-left lead">
+                    Software Engineer
+                </div>
+                <div class="float-right lead dropdown-toggle">
+                    NetApp June 2019 - October 2020
+                </div>                
+              </button>
+            </h2>
+          </div>
+      
+          <div id="collapseOne" class="collapse show body" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="content-section jumbotron-background">
+                <li>Refactored an inherited Python code base with hard coded values and paths to be more dynamic/modular,
+                    making the
+                    code base easier to work in for developers.</li>
+                <li>Created a micro service in Go that returned only the necessary information to replace an API call that
+                    was slow
+                    to return and had excessive information.</li>
+                <li>Implemented a UI component in Angular supporting a new underlying hardware configuration, allowing that
+                    configuration to be offered to customers.</li>
+              </div>
+          </div>
+        </div>
+        <div class="card body">
+            <div class="card-header content-section jumbotron-background" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="float-left lead">
+                        Software Contractor
+                    </div>
+                    <div class="float-right lead dropdown-toggle">
+                        NetApp June 2018 - May 2019
+                    </div>  
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse body" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="content-section jumbotron-background">
+                    <li>Created a tool in Python that would collect/parse logs looking for specific hardware failure signatures
+                        using
+                        regex when the support team was having difficulty diagnosing hardware failures efficiently. This reduced
+                        turnaround time for customers.</li>
+                    <li>Devised and conducted a rollback test matrix to investigate which build versions were having issues,
+                        enabling
+                        the platform team to be confident in performing rollbacks.</li>
+                    <li>Executed a kernel fuzzing software suite to test the OS and analyzed/reported any crashes.</li>
+                </div>
+            </div>
+          </div>
+        <div class="card body">
+          <div class="card-header content-section jumbotron-background" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-block text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="float-left lead">
+                    Technical Support
+                </div>
+                <div class="float-right lead dropdown-toggle">
+                    Textron June 2017 - May 2019
+                </div> 
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse body" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="content-section jumbotron-background">
+                <li>Resolved hardware and software issues that were impeding employees’ work</li>
+                <li>Educated employees about how to avoid issues going forward so they could work efficiently</li>
+                <li>Trained six new team members about best practices and common issues, increasing the number of employees
+                    we could
+                    help per hour by 20%
+                </li>
+            </div>
+          </div>
+        </div>
+      </div>
     <hr class="resume-rule">
-    <h7><strong>EDUCATION</strong></h7>
+    <h5><strong>Education:</strong></h5>
     <div class=" content-section jumbotron-background">
-        <p>Bachelor of Science in Computer Science, Wichita State University</p>
+        <p class="mb-0">Bachelor of Science in Computer Science, Wichita State University</p>
     </div>
 </div>
 
