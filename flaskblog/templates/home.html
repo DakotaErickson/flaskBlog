@@ -2,16 +2,15 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<br>
+<!-- TODO fix spacing around this with css because I removed the html linebreaks -->
 <h1 class="display-3 text-white">Welcome!</h1>
-<br>
-<br>
+<!-- TODO fix spacing around this with css because I removed the html linebreaks -->
 <div class="row">
-    <div class="col-md-8 blog-main">
+    <div class="col-md-8 blog-main pt-5">
         <div class="blog-post">
             <div class="jumbotron jumbotron-background content-section text-white pt-5 pb-5 pr-5 pl-5">
                 <div class="media-body">
-                    <h1 class="text-center about-me">About Me</h1>
+                    <h2 class="text-center about-me">About Me</h2>
                     <p class="about-me-blurb">I'm actively looking for my next career opportunity as a software
                         engineer.<br> I have
                         a Bachelor's degree in
@@ -29,10 +28,18 @@
                     <p> -Dakota Erickson</p>
                 </div>
             </div>
-        </div><!-- /.blog-post -->
-    </div><!-- /.blog-main -->
+        </div>
+    </div>
 
-    <aside class="col-md-4 blog-sidebar">
+    <aside class="col-md-4 blog-sidebar pt-5">
+        <div class="p-4 mb-2 bg-light rounded city-box text-white">
+            <div>
+                <h4 class="city-name">Remote</h4>
+            </div>
+            <p class="mb-0"> I spent the last year working 100% remotely, even before COVID lockdowns came into place. I wasn't sure if I was going to enjoy it at first, but after some time I realized how much I loved it.
+                My preference for my next job would be for it to be 100% remote.
+            </p>
+        </div>
         <div class="p-4 mb-2 bg-light rounded city-box text-white">
             <div>
                 <h4 class="city-name">Seattle</h4>
